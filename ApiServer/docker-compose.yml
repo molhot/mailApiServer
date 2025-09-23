@@ -1,0 +1,16 @@
+services:
+  python-app:
+    build: .
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    tty: true
+    environment:
+      - GRAPH_API_TOKEN=${GRAPH_API_TOKEN}
+      - MY_ACCOUNT_API_URL=${MY_ACCOUNT_API_URL}
+      - MY_MICROSOFT_SECRET_VALUE=${MY_MICROSOFT_SECRET_VALUE}
+      - MY_MICROSOFT_SECRET_CREDENTIAL=${MY_MICROSOFT_SECRET_CREDENTIAL}
+      - CLIENT_ID=${CLIENT_ID}
+      - TENANT_ID=${TENANT_ID}
+      - MY_MICROSOFT_SECRET_VALUE=${MY_MICROSOFT_SECRET_VALUE}
+      - MY_MICROSOFT_SECRET_CREDENTIAL=${MY_MICROSOFT_SECRET_CREDENTIAL}
