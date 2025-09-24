@@ -11,6 +11,7 @@ class apiHandler():
         self.SCOPE = self._getScopeEnviron()
         self.APP = self._setApp()
         self.ACCESSTOKEN = self._setAccessToken()
+        self.API_SCOPE = self._getApiScopseEnviron()
     
     def _getScopeEnviron(self):
         allScope : str = os.getenv('SCOPE')
@@ -18,6 +19,13 @@ class apiHandler():
             return allScope.split('|')
         else:
             return allScope
+    
+    def _getApiScopseEnviron(self):
+        spiAllScope : str = os.getenv('API_SCOPE')
+        if ('|' in spiAllScope):
+            return spiAllScope.split('|')
+        else:
+            return spiAllScope
     
     def _setApp(self):
         return msal.ConfidentialClientApplication(
