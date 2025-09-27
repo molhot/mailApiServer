@@ -21,11 +21,7 @@
 # else:
 #     print("MSAL での認証に失敗しました。")
 
-import resource.apiHandler.apiHandler as apiHandler
+import mailHandler.mailHandler as mailHandler
 
-apiHandler = apiHandler.apiHandler()
-access_token = apiHandler.getAccessToken()
-if access_token is not None:
-    print("アクセストークンを取得")
-else:
-    print("取得できず")
+mailhandler = mailHandler.mailHandler()
+print(mailhandler.getResponse())
