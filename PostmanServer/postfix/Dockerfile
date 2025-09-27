@@ -3,8 +3,9 @@ FROM debian:bullseye
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y postfix mailutils rsyslog curl && \
-    apt-get clean
+    apt-get install -y postfix mailutils rsyslog curl python3 python3-pip && \
+    apt-get clean && \
+    pip3 install requests
 
 # Postfix 設定
 COPY postfix-config.sh /postfix-config.sh
