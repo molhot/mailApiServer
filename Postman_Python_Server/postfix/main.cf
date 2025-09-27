@@ -1,0 +1,4 @@
+myhostname = mail.local
+mydestination =
+relayhost = [python]:1025
+inet_interfaces = all
