@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  postfix:
+    build: ./postfix
+    container_name: postfix-server
+    ports:
+      - "2525:25"
+    volumes:
+      - ./logs:/tmp
+    environment:
+      - RELAYHOST=
